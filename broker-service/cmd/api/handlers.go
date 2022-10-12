@@ -74,7 +74,7 @@ func (app *Config) authenticate(w http.ResponseWriter, a AuthPayload) {
 	var jsonFromService jsonResponse
 
 	// decode the json from  the auth service
-	err = json.NewDecoder(response.Body).Decode(jsonFromService)
+	err = json.NewDecoder(response.Body).Decode(&jsonFromService)
 	if err != nil {
 		app.errorJSON(w, err)
 		return
