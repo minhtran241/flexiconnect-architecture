@@ -39,7 +39,7 @@ The Microservices Architecture contains
             ```sh
             go get -u github.com/jackc/pgconn
             ```
-    -   [github.com/jackc/pgx](https://github.com/jackc/pgx) is a higher level libraries, high performance interface that exposes PostgreSQL-specific features such as `LISTEN` / `NOTIFY` and `COPY`. It also includes an adapter for the standard `database/sql` interface. The toolkit component is a related set of packages that implement PostgreSQL functionality such as parsing the wire protocol and type mapping between PostgreSQL and Go.
+    -   [github.com/jackc/pgx](https://github.com/jackc/pgx) is a higher level libraries, high performance interface that exposes PostgreSQL-specific features such as `LISTEN` / `NOTIFY` and `COPY`. It also includes an adapter for the standard `database/sql` interface. The toolkit component is a related set of packages that implement `PostgreSQL` functionality such as parsing the wire protocol and type mapping between `PostgreSQL` and `Go`.
         -   Installation
             ```sh
             go get -u github.com/jackc/pgx/v4
@@ -67,33 +67,33 @@ The Microservices Architecture contains
 
 ## Docker usage
 
--   All the Docker configurations are in the `project/docker-compose.yml` file
--   All the Docker images control for
+-   All the `Docker` configurations are in the `project/docker-compose.yml` file
+-   All the `Docker` images control for
 
     -   `Linux/MacOS` are in the `project/Makefile` file
     -   `Windows` are in the `project/Makefile.windows` file
 
--   Build all the Docker images and services's binaries
+-   Build all the `Docker` images and services's binaries
     ```sh
     make up-build
     ```
--   Build one Docker image of one specific service
+-   Build one `Docker` image of one specific service
     ```sh
     make service-build
     ```
--   Start all the Docker images
+-   Start all the `Docker` images
     ```sh
     make up
     ```
--   Stop all the Docker images
+-   Stop all the `Docker` images
     ```sh
     make down
     ```
--   Start the frontend binary listening on `http://localhost:80`
+-   Start the `frontend` binary listening on `http://localhost:80`
     ```sh
     make start
     ```
--   Stop the frontend binary listening on `http://localhost:80`
+-   Stop the `frontend` binary listening on `http://localhost:80`
     ```sh
     make stop
     ```
