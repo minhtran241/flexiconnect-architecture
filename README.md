@@ -32,9 +32,9 @@ The Microservices Architecture contains
 
 ## Authentication Service with PostgreSQL
 
--   <strong>Authentication Service</strong> is an API for determining if the credentials from the request body is matching the data in the database. All the credentials are stored in a PostgreSQL images
+-   <strong>Authentication Service</strong> is an API for determining if the credentials from the request body is matching the data in the database. All the credentials are stored in a PostgreSQL image
 -   Package index
-    -   [github.com/jackc/pgconn](https://github.com/jackc/pgconn) is a low-level `PostgreSQL` database driver. It operates at nearly the same level as the C library libpq.
+    -   [github.com/jackc/pgconn](https://github.com/jackc/pgconn) is a low-level `PostgreSQL` database driver. It operates at nearly the same level as the C library `libpq`.
         -   Installation
             ```sh
             go get -u github.com/jackc/pgconn
@@ -51,7 +51,7 @@ The Microservices Architecture contains
 
 ## Logger Service with MongoDB
 
--   <strong>Logger Service</strong> is an API for saving logs whenever one Service receives and processes a response. All the `LogEntry` object contains 2 fields Name and Data. The collections are stored in a MongoDB images
+-   <strong>Logger Service</strong> is an API for saving logs whenever one Service receives and processes a response. All the `LogEntry` object contains 2 fields Name and Data. The collections are stored in a MongoDB image
 -   Package index
     -   [github.com/mongodb/mongo-go-driver](https://github.com/mongodb/mongo-go-driver) is the MongoDB supported driver for Go
         -   Installation
