@@ -51,7 +51,7 @@ The Microservices Architecture contains
 
 ## Logger Service with MongoDB
 
--   <strong>Logger Service</strong> is an API for saving logs whenever one Service receives and processes a response. All the `LogEntry` object contains 2 fields Name and Data. The collections are stored in a MongoDB image
+-   <strong>Logger Service</strong> is an API for saving logs whenever one Service receives and processes a response. All the `LogEntry` struct contains 2 fields Name and Data. The collections are stored in a MongoDB image
 -   Package index
     -   [github.com/mongodb/mongo-go-driver](https://github.com/mongodb/mongo-go-driver) is the MongoDB supported driver for Go
         -   Installation
