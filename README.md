@@ -13,9 +13,9 @@ The Microservices Architecture contains
 -   The Test Page is used for test the Services in this Architecture
 -   The Test Page will send an example request to the specific Service that user choose and then receive the response from that Service
 -   Technologies
-    -   [Bootstrap](https://getbootstrap.com/docs/5.2/getting-started/introduction/)
+    -   [bootstrap](https://getbootstrap.com/docs/5.2/getting-started/introduction/)
     -   [javaScript](https://www.javascript.com) for fetching data from the services
-    -   [HTML](https://developer.mozilla.org/en-US/docs/Learn/HTML)
+    -   [html](https://developer.mozilla.org/en-US/docs/Learn/HTML)
 
 ## Broker Service
 
@@ -34,7 +34,7 @@ The Microservices Architecture contains
 
 -   <strong>Authentication Service</strong> is an API for determining if the credentials from the request body is matching the data in the database. All the credentials are stored in a PostgreSQL image
 -   Package index
-    -   [github.com/jackc/pgconn](https://github.com/jackc/pgconn) is a low-level `PostgreSQL` database driver. It operates at nearly the same level as the C library `libpq`.
+    -   [github.com/jackc/pgconn](https://github.com/jackc/pgconn) is a low-level `PostgreSQL` database driver. It operates at nearly the same level as the `C` library `libpq`
         -   Installation
             ```sh
             go get -u github.com/jackc/pgconn
