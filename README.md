@@ -39,7 +39,7 @@ The Microservices Architecture contains
             ```sh
             go get -u github.com/jackc/pgconn
             ```
-    -   [github.com/jackc/pgx](https://github.com/jackc/pgx) is a higher level libraries, high performance interface that exposes PostgreSQL-specific features such as `LISTEN` / `NOTIFY` and `COPY`. It also includes an adapter for the standard `database/sql` interface. The toolkit component is a related set of packages that implement `PostgreSQL` functionality such as parsing the wire protocol and type mapping between `PostgreSQL` and `Go`.
+    -   [github.com/jackc/pgx](https://github.com/jackc/pgx) is a higher level libraries, high performance interface that exposes PostgreSQL-specific features such as `LISTEN` / `NOTIFY` and `COPY`. It also includes an adapter for the standard `database/sql` interface. The toolkit component is a related set of packages that implement `PostgreSQL` functionality such as parsing the wire protocol and type mapping between `PostgreSQL` and `Go`
         -   Installation
             ```sh
             go get -u github.com/jackc/pgx/v4
@@ -53,7 +53,7 @@ The Microservices Architecture contains
 
 -   <strong>Logger Service</strong> is an API for saving logs whenever one Service receives and processes a response. All the `LogEntry` struct contains 2 fields Name and Data. The collections are stored in a MongoDB image
 -   Package index
-    -   [github.com/mongodb/mongo-go-driver](https://github.com/mongodb/mongo-go-driver) is the MongoDB supported driver for Go
+    -   [github.com/mongodb/mongo-go-driver](https://github.com/mongodb/mongo-go-driver) is the `MongoDB` supported driver for `Go`
         -   Installation
             ```sh
             go get go.mongodb.org/mongo-driver/mongo
