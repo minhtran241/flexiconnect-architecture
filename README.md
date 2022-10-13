@@ -28,7 +28,7 @@ The Microservices Architecture contains
             go get -u github.com/go-chi/chi/middleware
             go get -u github.com/go-chi/cors
             ```
--   File `broker-service.dockerfile` is the `dockerfile` for the service
+-   File `broker-service/broker-service.dockerfile` is the `dockerfile` for the service
 
 ## Authentication Service with PostgreSQL
 
@@ -47,7 +47,7 @@ The Microservices Architecture contains
             ```
     -   [github.com/golang/crypto/bcrypt](https://github.com/golang/crypto/blob/master/bcrypt/bcrypt.go) is used for hashing passwords
     -   [pkg.go.dev/database/sql](https://pkg.go.dev/database/sql) provides a generic interface around SQL (or SQL-like) databases. The sql package must be used in conjunction with a database driver. See [golang.org/s/sqldrivers](https://golang.org/s/sqldrivers) for a list of drivers
--   File `authentication-service.dockerfile` is the `dockerfile` for the service
+-   File `authentication-service/authentication-service.dockerfile` is the `dockerfile` for the service
 
 ## Logger Service with MongoDB
 
@@ -59,7 +59,7 @@ The Microservices Architecture contains
             go get go.mongodb.org/mongo-driver/mongo
             go get go.mongodb.org/mongo-driver/mongo/options
             ```
--   -   File `logger-service.dockerfile` is the `dockerfile` for the service
+-   -   File `logger-service/logger-service.dockerfile` is the `dockerfile` for the service
 
 ## Mail Service
 
