@@ -59,7 +59,7 @@ The Microservices Architecture contains
             go get go.mongodb.org/mongo-driver/mongo
             go get go.mongodb.org/mongo-driver/mongo/options
             ```
--   -   File `logger-service/logger-service.dockerfile` is the `dockerfile` for the service
+-   File `logger-service/logger-service.dockerfile` is the `dockerfile` for the service
 
 ## Mail Service
 
