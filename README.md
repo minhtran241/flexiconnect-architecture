@@ -30,7 +30,7 @@ The Microservices Architecture contains
 
 -   <strong>Broker Service</strong> is an entry point for redirecting the request to appropriate service and receiving the response from that service
 -   Package index
-    -   [github.com/go-chi/chi](https://github.com/go-chi/chi) is a lightweight, idiomatic and composable router for building Go HTTP services
+    -   [github.com/go-chi/chi](https://github.com/go-chi/chi) is a lightweight, idiomatic and composable router for building `Go` HTTP services
         -   Installation
             ```sh
             go get -u github.com/go-chi/chi/v5
@@ -43,7 +43,7 @@ The Microservices Architecture contains
 
 -   <strong>Authentication Service</strong> is an API for determining if the credentials from the request body is matching the data in the database. All the credentials are stored in a PostgreSQL image
 -   Package index
-    -   [github.com/go-chi/chi](https://github.com/go-chi/chi) is a lightweight, idiomatic and composable router for building Go HTTP services
+    -   [github.com/go-chi/chi](https://github.com/go-chi/chi) is a lightweight, idiomatic and composable router for building `Go` HTTP services
         -   Installation
             ```sh
             go get -u github.com/go-chi/chi/v5
@@ -69,7 +69,7 @@ The Microservices Architecture contains
 
 -   <strong>Logger Service</strong> is an API for saving logs whenever one Service receives and processes a response. All the `LogEntry` struct contains 2 fields Name and Data. The collections are stored in a MongoDB image
 -   Package index
-    -   [github.com/go-chi/chi](https://github.com/go-chi/chi) is a lightweight, idiomatic and composable router for building Go HTTP services
+    -   [github.com/go-chi/chi](https://github.com/go-chi/chi) is a lightweight, idiomatic and composable router for building `Go` HTTP services
         -   Installation
             ```sh
             go get -u github.com/go-chi/chi/v5
@@ -88,7 +88,7 @@ The Microservices Architecture contains
 
 -   <strong>Mail Service</strong> connects directly with <strong>Broker Service</strong> in the development version which you shouldn't do in production. In production, <strong>Mail Service</strong> can not be connected by User, just be connected to other Service except Broker Service. The Service sends tested mails to the MailHog server
 -   Package index
-    -   [github.com/go-chi/chi](https://github.com/go-chi/chi) is a lightweight, idiomatic and composable router for building Go HTTP services
+    -   [github.com/go-chi/chi](https://github.com/go-chi/chi) is a lightweight, idiomatic and composable router for building `Go` HTTP services
         -   Installation
             ```sh
             go get -u github.com/go-chi/chi/v5
@@ -106,7 +106,7 @@ The Microservices Architecture contains
             ```
         -   The local server of `MailHog` runs on `http://localhost:1025`, check this server for web UI and see all the tested mails in the `Inbox` section
         -   A `Docker` image for `MailHog` is configured in file `project/docker-compose.yml`
-    -   [github.com/vanng822/go-premailer](github.com/vanng822/go-premailer) is an inline styling for HTML mail in golang
+    -   [github.com/vanng822/go-premailer](github.com/vanng822/go-premailer) is an inline styling for HTML mail in `Go`
         -   Styling mail with both `HTML` and `plain` formats before sending
         -   Installation
             ```sh
