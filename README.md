@@ -8,6 +8,15 @@ The Microservices Architecture contains
 -   Mail Service
 -   Listener Service AMQP with RabbitMQ
 
+## GNU Make
+
+-   [www.gnu.org/software/make](https://www.gnu.org/software/make/) is a tool which controls the generation of executables and other non-source files of a program from the program's source files
+-   Make gets its knowledge of how to build your program from a file called the `makefile`, which lists each of the non-source files and how to compute it from other files. When you write a program, you should write a makefile for it, so that it is possible to use Make to build and install the program
+-   All the `Docker` images control for
+
+    -   `Linux/MacOS` are in the `project/Makefile` file
+    -   `Windows` are in the `project/Makefile.windows` file
+
 ## Frontend Test
 
 -   The Test Page is used for test the Services in this Architecture
@@ -116,10 +125,6 @@ The Microservices Architecture contains
 ## Docker usage
 
 -   All the `Docker` configurations are in the `project/docker-compose.yml` file
--   All the `Docker` images control for
-
-    -   `Linux/MacOS` are in the `project/Makefile` file
-    -   `Windows` are in the `project/Makefile.windows` file
 
 -   Build all the `Docker` images and services's binaries
     ```sh
