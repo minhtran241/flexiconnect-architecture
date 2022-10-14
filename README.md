@@ -95,7 +95,7 @@ The Microservices Architecture contains
             ```sh
             go get github.com/mailhog/MailHog
             ```
-        -   The local server of `MailHog` runs on `http://localhost:1025`
+        -   The local server of `MailHog` runs on `http://localhost:1025`, check this server for web UI and see all the tested mails in the `Inbox` section
         -   A `Docker` image for `MailHog` is configured in file `project/docker-compose.yml`
     -   [github.com/vanng822/go-premailer](github.com/vanng822/go-premailer) is an inline styling for HTML mail in golang
         -   Styling mail with both `HTML` and `plain` formats before sending
