@@ -81,11 +81,11 @@ The Microservices Architecture contains
     ```sh
     make service-build
     ```
--   Start all the `Docker` images
+-   Pull and Start all the `Docker` images
     ```sh
     make up
     ```
--   Stop all the `Docker` images
+-   Stop docker compose
     ```sh
     make down
     ```
