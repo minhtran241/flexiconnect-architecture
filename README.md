@@ -34,6 +34,13 @@ The Microservices Architecture contains
 
 -   <strong>Authentication Service</strong> is an API for determining if the credentials from the request body is matching the data in the database. All the credentials are stored in a PostgreSQL image
 -   Package index
+    -   [github.com/go-chi/chi](https://github.com/go-chi/chi) is a lightweight, idiomatic and composable router for building Go HTTP services
+        -   Installation
+            ```sh
+            go get -u github.com/go-chi/chi/v5
+            go get -u github.com/go-chi/chi/middleware
+            go get -u github.com/go-chi/cors
+            ```
     -   [github.com/jackc/pgconn](https://github.com/jackc/pgconn) is a low-level `PostgreSQL` database driver. It operates at nearly the same level as the `C` library `libpq`
         -   Installation
             ```sh
@@ -53,6 +60,13 @@ The Microservices Architecture contains
 
 -   <strong>Logger Service</strong> is an API for saving logs whenever one Service receives and processes a response. All the `LogEntry` struct contains 2 fields Name and Data. The collections are stored in a MongoDB image
 -   Package index
+    -   [github.com/go-chi/chi](https://github.com/go-chi/chi) is a lightweight, idiomatic and composable router for building Go HTTP services
+        -   Installation
+            ```sh
+            go get -u github.com/go-chi/chi/v5
+            go get -u github.com/go-chi/chi/middleware
+            go get -u github.com/go-chi/cors
+            ```
     -   [github.com/mongodb/mongo-go-driver](https://github.com/mongodb/mongo-go-driver) is the `MongoDB` supported driver for `Go`
         -   Installation
             ```sh
@@ -62,6 +76,40 @@ The Microservices Architecture contains
 -   File `logger-service/logger-service.dockerfile` is the `dockerfile` for the service
 
 ## Mail Service
+
+-   <strong>Mail Service</strong> connects directly with <strong>Broker Service</strong> in the development version (you should not do that way in production). In production, <strong>Mail Service</strong> can not be connected by User, just be connected to other Service except Broker Service. The Service send tested email to the MailHog server.
+-   Package index
+    -   [github.com/go-chi/chi](https://github.com/go-chi/chi) is a lightweight, idiomatic and composable router for building Go HTTP services
+        -   Installation
+            ```sh
+            go get -u github.com/go-chi/chi/v5
+            go get -u github.com/go-chi/chi/middleware
+            go get -u github.com/go-chi/cors
+            ```
+    -   [github.com/mailhog/MailHog](https://github.com/mailhog/MailHog) is an email testing tool for developers
+        -   Overview
+            -   Configure your application to use `MailHog` for SMTP delivery
+            -   View messages in the web UI, or retrieve them with the JSON API
+            -   Optionally release messages to real SMTP servers for delivery
+        -   Installation
+            ```sh
+            go get github.com/mailhog/MailHog
+            ```
+        -   The local server of `MailHog` runs on `http://localhost:1025`
+        -   A `Docker` image for `MailHog` is configured in file `project/docker-compose.yml`
+    -   [github.com/vanng822/go-premailer](github.com/vanng822/go-premailer) is an inline styling for HTML mail in golang
+        -   Styling mail with both `HTML` and `plain` formats before sending
+        -   Installation
+            ```sh
+            go get github.com/vanng822/go-premailer/premailer
+            ```
+    -   [github.com/xhit/go-simple-mail](https://github.com/xhit/go-simple-mail) is the best way to send emails in `Go` with SMTP Keep Alive and Timeout for Connect and Send
+        -   You can find more information in the [documentation](https://pkg.go.dev/github.com/xhit/go-simple-mail/v2)
+        -   Installation
+            ```sh
+            go get github.com/xhit/go-simple-mail/v2
+            ```
+-   File `mail-service/mail-service.dockerfile` is the `dockerfile` for the service
 
 ## List Service AMQP with RabbitMQ
 
