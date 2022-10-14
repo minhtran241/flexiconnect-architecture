@@ -28,7 +28,7 @@ func (app *Config) SendMail(w http.ResponseWriter, r *http.Request) {
 	}
 	payload := jsonResponse{
 		Error:   false,
-		Message: "sent to" + requestPayload.To,
+		Message: "sent to " + requestPayload.To,
 	}
 	app.writeJSON(w, http.StatusOK, payload)
 }

@@ -75,13 +75,15 @@ func (app *Config) sendMail(w http.ResponseWriter, msg MailPayload) {
 	client := &http.Client{}
 	response, err := client.Do(request)
 	defer response.Body.Close()
+	// make sure we get back the right status code
 	if response.StatusCode != http.StatusAccepted {
-		app.errorJSON(w, err)
+		app.errorJSON(w, errors.New("error calling mail service"))
 		return
 	}
+	// send back json
 	var payload jsonResponse
 	payload.Error = false
-	payload.Message = "sent"
+	payload.Message = "Message sent to " + msg.To
 	app.writeJSON(w, http.StatusAccepted, payload)
 }
 
@@ -98,7 +100,7 @@ func (app *Config) logItem(w http.ResponseWriter, l LogPayload) {
 	response, err := client.Do(request)
 	defer response.Body.Close()
 	if response.StatusCode != http.StatusAccepted {
-		app.errorJSON(w, err)
+		app.errorJSON(w, errors.New("error calling logger service"))
 		return
 	}
 	var payload jsonResponse
