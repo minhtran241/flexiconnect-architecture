@@ -77,7 +77,7 @@ The Microservices Architecture contains
 
 ## Mail Service
 
--   <strong>Mail Service</strong> connects directly with <strong>Broker Service</strong> in the development version (you should not do that way in production). In production, <strong>Mail Service</strong> can not be connected by User, just be connected to other Service except Broker Service. The Service send tested email to the MailHog server.
+-   <strong>Mail Service</strong> connects directly with <strong>Broker Service</strong> in the development version (you should not do that way in production). In production, <strong>Mail Service</strong> can not be connected by User, just be connected to other Service except Broker Service. The Service sends tested mails to the MailHog server.
 -   Package index
     -   [github.com/go-chi/chi](https://github.com/go-chi/chi) is a lightweight, idiomatic and composable router for building Go HTTP services
         -   Installation
