@@ -37,6 +37,7 @@ The Microservices Architecture contains
             go get github.com/go-chi/chi/middleware
             go get github.com/go-chi/cors
             ```
+    -   [pkg.go.dev/net/rpc](https://pkg.go.dev/net/rpc) provides access to the exported methods of an object across a network or other I/O connection. A server registers an object, making it visible as a service with the name of the type of the object. After registration, exported methods of the object will be accessible remotely. A server may register multiple objects (services) of different types but it is an error to register multiple objects of the same type.
 -   File `broker-service/broker-service.dockerfile` is the `dockerfile` for the service
 
 ## Authentication Service with PostgreSQL
@@ -82,6 +83,7 @@ The Microservices Architecture contains
             go get go.mongodb.org/mongo-driver/mongo
             go get go.mongodb.org/mongo-driver/mongo/options
             ```
+    -   [pkg.go.dev/net/rpc](https://pkg.go.dev/net/rpc) provides access to the exported methods of an object across a network or other I/O connection. A server registers an object, making it visible as a service with the name of the type of the object. After registration, exported methods of the object will be accessible remotely. A server may register multiple objects (services) of different types but it is an error to register multiple objects of the same type.
 -   File `logger-service/logger-service.dockerfile` is the `dockerfile` for the service
 
 ## Mail Service
@@ -141,6 +143,14 @@ The Microservices Architecture contains
     -   Find more information about `RabbitMQ` at [RabbitMQ website](https://www.rabbitmq.com)
     -   [Godoc API reference](https://pkg.go.dev/github.com/rabbitmq/amqp091-go)
     -   [RabbitMQ tutorials in Go](https://github.com/rabbitmq/rabbitmq-tutorials/tree/main/go)
+
+## Communicating between Services using RPC
+
+-   <strong>Broker Service</strong> has 2 options to communicate with <strong>Logger Service</strong>
+    -   `logEventViaRabbit(w http.ResponseWriter, l LogPayload)` just pushes requests from the client to the `RabbitMQ` Server for <strong>Listener Service</strong> to consume
+    -   `logItemViaRPC(w http.ResponseWriter, l LogPayload)` connects to the `RPC` Server of <strong>Logger Service</strong> on port `5001` and calls the function of the `RPC` Server using [pkg.go.dev/net/rpc](https://pkg.go.dev/net/rpc) package
+        -   When it comes to the `RPC` option, the <strong>Logger Service</strong> has to always listen to the RPC requests
+        -   <strong>Broker Service</strong> and <strong>Logger Service</strong> use [pkg.go.dev/net/rpc](https://pkg.go.dev/net/rpc) package to communicate. The <strong>Broker Service</strong> is the client and the <strong>Logger Service</strong> is the server
 
 ## Docker usage
 

@@ -51,7 +51,7 @@ services:
             MAIL_PASSWORD: ''
             FROM_NAME: 'Minh Tran'
             FROM_ADDRESS: trqminh24@gmail.com
-        
+
     listener-service:
         build:
             context: ./../listener-service
