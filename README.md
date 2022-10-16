@@ -33,9 +33,9 @@ The Microservices Architecture contains
     -   [github.com/go-chi/chi](https://github.com/go-chi/chi) is a lightweight, idiomatic and composable router for building `Go` HTTP services
         -   Installation
             ```sh
-            go get -u github.com/go-chi/chi/v5
-            go get -u github.com/go-chi/chi/middleware
-            go get -u github.com/go-chi/cors
+            go get github.com/go-chi/chi/v5
+            go get github.com/go-chi/chi/middleware
+            go get github.com/go-chi/cors
             ```
 -   File `broker-service/broker-service.dockerfile` is the `dockerfile` for the service
 
@@ -46,20 +46,20 @@ The Microservices Architecture contains
     -   [github.com/go-chi/chi](https://github.com/go-chi/chi) is a lightweight, idiomatic and composable router for building `Go` HTTP services
         -   Installation
             ```sh
-            go get -u github.com/go-chi/chi/v5
-            go get -u github.com/go-chi/chi/middleware
-            go get -u github.com/go-chi/cors
+            go get github.com/go-chi/chi/v5
+            go get github.com/go-chi/chi/middleware
+            go get github.com/go-chi/cors
             ```
     -   [github.com/jackc/pgconn](https://github.com/jackc/pgconn) is a low-level `PostgreSQL` database driver. It operates at nearly the same level as the `C` library `libpq`
         -   Installation
             ```sh
-            go get -u github.com/jackc/pgconn
+            go get github.com/jackc/pgconn
             ```
     -   [github.com/jackc/pgx](https://github.com/jackc/pgx) is a higher level libraries, high performance interface that exposes PostgreSQL-specific features such as `LISTEN` / `NOTIFY` and `COPY`. It also includes an adapter for the standard `database/sql` interface. The toolkit component is a related set of packages that implement `PostgreSQL` functionality such as parsing the wire protocol and type mapping between `PostgreSQL` and `Go`
         -   Installation
             ```sh
-            go get -u github.com/jackc/pgx/v4
-            go get -u github.com/jackc/pgx/v4/stdlib
+            go get github.com/jackc/pgx/v4
+            go get github.com/jackc/pgx/v4/stdlib
             ```
     -   [github.com/golang/crypto/bcrypt](https://github.com/golang/crypto/blob/master/bcrypt/bcrypt.go) is used for hashing passwords
     -   [pkg.go.dev/database/sql](https://pkg.go.dev/database/sql) provides a generic interface around SQL (or SQL-like) databases. The sql package must be used in conjunction with a database driver. See [golang.org/s/sqldrivers](https://golang.org/s/sqldrivers) for a list of drivers
@@ -72,9 +72,9 @@ The Microservices Architecture contains
     -   [github.com/go-chi/chi](https://github.com/go-chi/chi) is a lightweight, idiomatic and composable router for building `Go` HTTP services
         -   Installation
             ```sh
-            go get -u github.com/go-chi/chi/v5
-            go get -u github.com/go-chi/chi/middleware
-            go get -u github.com/go-chi/cors
+            go get github.com/go-chi/chi/v5
+            go get github.com/go-chi/chi/middleware
+            go get github.com/go-chi/cors
             ```
     -   [github.com/mongodb/mongo-go-driver](https://github.com/mongodb/mongo-go-driver) is the `MongoDB` supported driver for `Go`
         -   Installation
@@ -91,9 +91,9 @@ The Microservices Architecture contains
     -   [github.com/go-chi/chi](https://github.com/go-chi/chi) is a lightweight, idiomatic and composable router for building `Go` HTTP services
         -   Installation
             ```sh
-            go get -u github.com/go-chi/chi/v5
-            go get -u github.com/go-chi/chi/middleware
-            go get -u github.com/go-chi/cors
+            go get github.com/go-chi/chi/v5
+            go get github.com/go-chi/chi/middleware
+            go get github.com/go-chi/cors
             ```
     -   [github.com/mailhog/MailHog](https://github.com/mailhog/MailHog) is an email testing tool for developers
         -   Overview
