@@ -120,7 +120,27 @@ The Microservices Architecture contains
             ```
 -   File `mail-service/mail-service.dockerfile` is the `dockerfile` for the service
 
-## List Service AMQP with RabbitMQ
+## Listener Service AMQP
+
+-   <strong>Listener Service AMQP</strong> listens for any data (requests) pushed to RabbitMQ server to consume it as soon as possible
+-   Any requests after being routed by <strong>Broker Service</strong> is pushed directly to RabbitMQ server. The <strong>Listener Service AMQP</strong> connects to the RabbitMQ server and listens to any requests in the message queue and then sends requests to the appropriate Services
+-   Package index
+    -   [github.com/rabbitmq/amqp091-go](https://github.com/rabbitmq/amqp091-go) is a `Go AMQP 0.9.1` client maintained by the [RabbitMQ core team](https://github.com/rabbitmq). The package provides a functional interface that closely represents the `AMQP 0.9.1` model targeted to `RabbitMQ` as a server
+        -   Installation
+            ```sh
+            go get github.com/rabbitmq/amqp091-go
+            ```
+-   File `listener-service/listener-service.dockerfile` is the `dockerfile` for the service
+
+## RabbitMQ Server
+
+-   Image for the RabbitMQ server is `rabbitmq:3.9-alpine`, runs on port `5672` on `docker` server
+-   Uses the `topics` as exchange type
+-   Does not delete data until it is consumed successfully
+-   References
+    -   Find more information about `RabbitMQ` at [RabbitMQ website](https://www.rabbitmq.com)
+    -   [Godoc API reference](https://pkg.go.dev/github.com/rabbitmq/amqp091-go)
+    -   [RabbitMQ tutorials in Go](https://github.com/rabbitmq/rabbitmq-tutorials/tree/main/go)
 
 ## Docker usage
 
