@@ -149,7 +149,7 @@ The Microservices Architecture contains
 -   <strong>Broker Service</strong> has 2 options to communicate with <strong>Logger Service</strong>
     -   `logEventViaRabbit(w http.ResponseWriter, l LogPayload)` just pushes requests from the client to the `RabbitMQ` Server for <strong>Listener Service</strong> to consume
     -   `logItemViaRPC(w http.ResponseWriter, l LogPayload)` connects to the `RPC` Server of <strong>Logger Service</strong> on port `5001` and calls the function of the `RPC` Server using [pkg.go.dev/net/rpc](https://pkg.go.dev/net/rpc) package
-        -   When it comes to the `RPC` option, the <strong>Logger Service</strong> has to always listen to the RPC requests
+        -   When it comes to the `RPC` option, the <strong>Logger Service</strong> has to always listen to the `RPC` requests
         -   <strong>Broker Service</strong> and <strong>Logger Service</strong> use [pkg.go.dev/net/rpc](https://pkg.go.dev/net/rpc) package to communicate. The <strong>Broker Service</strong> is the client and the <strong>Logger Service</strong> is the server
 
 ## Docker usage
