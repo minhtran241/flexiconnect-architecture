@@ -134,7 +134,7 @@ The Microservices Architecture contains
 
 ## RabbitMQ Server
 
--   Image for the `RabbitMQ` server is `rabbitmq:3.9-alpine`, runs on port `5672` on `docker` server
+-   Image for the `RabbitMQ` server is [`rabbitmq:3.9-alpine`](https://github.com/docker-library/rabbitmq/blob/6889979f517c7ea3a7bd54bb88864dc8c29d327c/3.9/alpine/Dockerfile), runs on port `5672` on `docker` server
 -   Uses the `topics` as exchange type
 -   Does not delete data until it is consumed successfully
 -   References
