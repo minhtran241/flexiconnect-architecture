@@ -192,13 +192,73 @@ The Microservices Architecture contains
 
 ## Deployment
 
--   Build images for microservices
+-   Docker Swarm
+
+    -   Build images for microservice
+        ```sh
+        docker build -f servicename.dockerfile -t your_docker_hub_username/servicename:1.0.0 .
+        ```
+    -   Push images to `docker hub`
+        ```sh
+        docker push your_docker_hub_username/servicename:1.0.0
+        ```
+    -   Configurations of `Docker Swarm` are in `project/swarm.yml` file
+    -   Go to the `project` folder
+    -   Initiate `Swarm` (set the manager node is the `project` folder)
+        ```sh
+        docker swarm init
+        ```
+    -   In order to set the current folder as the `manager/worker` node
+        ```sh
+        docker swarm join-token manager/worker
+        ```
+    -   Create all the services following the configurations of `Docker Swarm`
+        ```sh
+        docker stack deploy -c swarm.yml go-microservices
+        ```
+    -   List the running services
+        ```sh
+        docker service ls
+        ```
+    -   Scaling services
+        ```sh
+        docker service scale go-microservices_servicename=number_of_tasks
+        ```
+    -   If one service suddenly dies, `Docker Swarm` will create another instance and bring it back up
+
+-   Updating Services
+    -   Build a new tagged version of the service
+        ```sh
+        docker build -f servicename.dockerfile -t your_docker_hub_username/servicename:1.0.1 .
+        ```
+    -   Push images again to `docker hub`
+        ```sh
+        docker push your_docker_hub_username/servicename:1.0.1
+        ```
+    -   Update the version of the service currently running in `Swarm`
+        -   Any time updating a service to a new version, at least 2 tasks of that service have to be running in order to achieve no downtime
+            ```sh
+            docker service scale go-microservices_servicename=2
+            ```
+        -   Update one image to a new version
+            ```sh
+            docker service update --image your_docker_hub_username/servicename:1.0.1 go-microservices_servicename
+            ```
+        -   Downgrade
+            ```sh
+            docker service update --image your_docker_hub_username/servicename:1.0.0 go-microservices_servicename
+            ```
+-   Stopping Docker Swarm
     ```sh
-    docker build -f service_name-service.dockerfile -t your_docker_hub_useranme/service_name-service:1.0.0 .
+    docker service scale go-microservices_servicename=0
     ```
--   Push images to `docker hub`
+-   Removing Docker Swarm
     ```sh
-    docker push your_docker_hub_username/service_name-service:1.0.0
+    docker stack rm go-microservices
+    ```
+-   Leaving Docker Swarm (use `--force` on a node that is participating as manager)
+    ```sh
+    docker swarm leave
     ```
 
 ## Contributor
