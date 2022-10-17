@@ -260,6 +260,18 @@ The Microservices Architecture contains
     ```sh
     docker swarm leave
     ```
+-   Caddy
+    -   Added to the mix as a Proxy to the Front end and the Broker
+    -   Configurations in the `project/Caddyfile` file
+    -   Build the `caddy` docker image
+        ```sh
+        docker build -f caddy.dockerfile -t your_docker_hub_username/micro-caddy:1.0.0 .
+        docker push your_docker_hub_username/micro-caddy:1.0.0
+        ```
+-   Bringing up Swarm
+    ```sh
+    docker stack deploy -c swarm.yml go-microservices
+    ```
 
 ## Contributor
 
