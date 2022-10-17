@@ -190,6 +190,17 @@ The Microservices Architecture contains
     make stop
     ```
 
+## Deployment
+
+-   Build images for microservices
+    ```sh
+    docker build -f service_name-service.dockerfile -t your_docker_hub_useranme/service_name-service:1.0.0 .
+    ```
+-   Push images to `docker hub`
+    ```sh
+    docker push your_docker_hub_username/service_name-service:1.0.0
+    ```
+
 ## Contributor
 
 -   Minh Tran (Me)
