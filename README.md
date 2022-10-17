@@ -136,6 +136,8 @@ The Microservices Architecture contains
 
 ## RabbitMQ Server
 
+-   The first option for for <strong>Broker Service</strong> to communicate with <strong>Logger Service</strong>
+    -   `logEventViaRabbit(w http.ResponseWriter, l LogPayload)` just pushes requests from the client to the `RabbitMQ` Server for <strong>Listener Service</strong> to consume
 -   Image for the `RabbitMQ` server is [`rabbitmq:3.9-alpine`](https://github.com/docker-library/rabbitmq/blob/6889979f517c7ea3a7bd54bb88864dc8c29d327c/3.9/alpine/Dockerfile), runs on port `5672` on `docker` server
 -   Uses the `topics` as exchange type
 -   Does not delete data until it is consumed successfully
@@ -146,11 +148,18 @@ The Microservices Architecture contains
 
 ## Communicating between Services using RPC
 
--   <strong>Broker Service</strong> has 2 options to communicate with <strong>Logger Service</strong>
-    -   `logEventViaRabbit(w http.ResponseWriter, l LogPayload)` just pushes requests from the client to the `RabbitMQ` Server for <strong>Listener Service</strong> to consume
+-   The second option for <strong>Broker Service</strong> to communicate with <strong>Logger Service</strong>
     -   `logItemViaRPC(w http.ResponseWriter, l LogPayload)` connects to the `RPC` Server of <strong>Logger Service</strong> on port `5001` and calls the function of the `RPC` Server using [pkg.go.dev/net/rpc](https://pkg.go.dev/net/rpc) package
         -   When it comes to the `RPC` option, the <strong>Logger Service</strong> has to always listen to the `RPC` requests
         -   <strong>Broker Service</strong> and <strong>Logger Service</strong> use [pkg.go.dev/net/rpc](https://pkg.go.dev/net/rpc) package to communicate. The <strong>Broker Service</strong> is the client and the <strong>Logger Service</strong> is the server
+
+## gRPC Connection
+
+-   The third option for <strong>Broker Service</strong> to communicate with <strong>Logger Service</strong>
+    -   `LogViaGRPC(w http.ResponseWriter, r *http.Request)` creates a client and connects the client to the gRPC server that is located in the `logger-service/cmd/api/grpc.go` file. the gRPC server runs on port `50001`
+-   Information about packages and how to work and generate codes with `Protocol Buffers` and `gRPC`
+    -   [My Protocol Buffers Instruction repo](https://github.com/minhtran241/protocol_buffers_go_generate)
+    -   [My gRPC Introduction repo](https://github.com/minhtran241/gRPC-introduction)
 
 ## Docker usage
 
